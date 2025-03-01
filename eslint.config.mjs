@@ -16,5 +16,13 @@ export default [
 			'plugin:react/recommended',
 			'prettier',
 		],
+		settings: {
+			'import/resolver': {
+				node: {
+					extensions: ['.tsx', '.ts', '.js', '.json'],
+				},
+				typescript: {},
+			},
+		},
 	},
 ];
