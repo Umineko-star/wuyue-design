@@ -1,0 +1,51 @@
+{
+	"name": "wuyue-design",
+	"version": "1.0.0",
+	"main": "dist/boundle.js",
+	"license": "MIT",
+	"private": false,
+	"author": "wuyue",
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"commit-msg": "commitlint --config .commitlintrc.js -E HUSKY_GIT_PARAMS"
+		}
+	},
+	"lint-staged": {
+		"*.{ts,tsx,js}": [
+			"eslint --config eslint.config.mjs"
+		],
+		"*.{css,less,scss}": [
+			"stylelint --config .stylelintrc.js"
+		],
+		"*.{ts,tsx,js,json,html,yml,css,less,scss,md}": [
+			"prettier --write"
+		]
+	},
+	"scripts": {
+		"lint": "yarn run lint-eslint && yarn run lint-stylelint",
+		"lint-eslint": "eslint -c .eslintrc.js --ext .ts,.tsx,.js src",
+		"lint-stylelint": "stylelint --config .stylelintrc.js src/**/*.{less,css,scss}",
+		"prepare": "husky"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "19.2.0",
+		"@commitlint/config-conventional": "19.1.0",
+		"@eslint/js": "^9.21.0",
+		"eslint": "^9.21.0",
+		"eslint-config-prettier": "9.1.0",
+		"eslint-plugin-react": "^7.37.4",
+		"globals": "^16.0.0",
+		"husky": "^9.1.7",
+		"lint-staged": "15.2.2",
+		"prettier": "3.2.5",
+		"stylelint": "16.2.1",
+		"stylelint-config-prettier": "9.0.5",
+		"stylelint-config-rational-order": "0.1.2",
+		"stylelint-config-standard": "36.0.0",
+		"stylelint-declaration-block-no-ignored-properties": "2.8.0",
+		"stylelint-prettier": "5.0.0",
+		"typescript": "5.4.2",
+		"typescript-eslint": "^8.25.0"
+	}
+}
