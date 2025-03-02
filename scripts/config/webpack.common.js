@@ -52,7 +52,7 @@ module.exports = {
 	},
 	output: {
 		filename: `js/[name]${isDev ? '' : '.[hash:8]'}.js`,
-		path: resolve(PROJECT_PATH, './dist'),
+		path: resolve(PROJECT_PATH, './bundle/frontend'),
 	},
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js', '.json'],

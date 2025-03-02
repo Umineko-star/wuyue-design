@@ -1,8 +1,8 @@
 module.exports = {
 	// 从标准配置中继承规则
 	extends: [
-		'stylelint-config-standard',
-		'stylelint-config-rational-order',
+		// 'stylelint-config-standard',
+		// 'stylelint-config-rational-order',
 		'prettier',
 	],
 	plugins: [
@@ -29,5 +29,5 @@ module.exports = {
 	// 提示我们写的矛盾样式
 
 	// 忽略检查的文件或文件夹
-	ignoreFiles: ['node_modules/**/*', 'build/**/*'],
+	ignoreFiles: ['node_modules/**/*', 'build/**/*', '/src/stoies/**'],
 };

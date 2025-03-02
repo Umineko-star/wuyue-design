@@ -11,11 +11,11 @@ export default [
 	...tseslint.configs.recommended,
 	pluginReact.configs.flat.recommended,
 	{
-		extends: [
-			'standard-with-typescript',
-			'plugin:react/recommended',
-			'prettier',
-		],
+		// extends: [
+		// 	'standard-with-typescript',
+		// 	'plugin:react/recommended',
+		// 	'prettier',
+		// ],
 		settings: {
 			'import/resolver': {
 				node: {
