@@ -3,7 +3,7 @@
 on:
     push:
         branches:
-            - main
+            - gh-pages
 
 jobs:
     # 构建并部署作业
