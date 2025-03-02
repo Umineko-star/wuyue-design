@@ -55,7 +55,7 @@
 		"commit": "git-cz",
 		"start": "cross-env NODE_ENV=development webpack-dev-server --config ./scripts/config/webpack.dev.js",
 		"lint": "yarn run lint-eslint && yarn run lint-stylelint",
-		"lint-eslint": "eslint -c eslint.config.mjs --ext .ts,.tsx,.js src",
+		"lint-eslint": "eslint -c eslint.config.mjs --ext .ts,.tsx,.js src --fix",
 		"lint-stylelint": "stylelint --config .stylelintrc.js src/**/*.{less,css,scss} --fix",
 		"prepare": "husky install",
 		"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
