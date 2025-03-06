@@ -13,6 +13,8 @@ import replace from '@rollup/plugin-replace';
 import terser from '@rollup/plugin-terser';
 import cssnano from 'cssnano';
 import autoprefixer from 'autoprefixer';
+import { isDev } from './scripts/constants.js';
+import del from 'rollup-plugin-delete'
 const pkg = JSON.parse(readFileSync('./package.json'));
 /** @type {import("rollup").RollupOptions} */
 export default [
@@ -28,17 +30,18 @@ export default [
 			{
 				file: pkg.main,
 				format: 'cjs',
-				sourcemap: true,
+				sourcemap: isDev,
 			},
 			{
 				file: pkg.module,
 				format: 'esm',
-				sourcemap: true,
+				sourcemap: isDev,
 			},
 			{
 				file: pkg.unpkg,
 				name: 'Wuyue',
 				format: 'umd',
+				sourcemap: isDev,
 				globals: {
 					'react': 'React',
 					'react-dom': 'ReactDOM',
@@ -46,6 +49,7 @@ export default [
 			},
 		],
 		plugins: [
+			del({ targets: 'dist/*' }),
 			resolve(),
 			commonjs(),
 			typescript({
