@@ -1,0 +1,18 @@
+import React,{ RefObject,PropsWithChildren,createContext,useRef, FC } from 'react'
+import { MessageProvider,MessageRef } from '@components/Message/index'
+interface ConfigProviderProps {
+    messageRef?: RefObject<MessageRef>
+}
+export const MessageConfigContext = createContext<ConfigProviderProps>({})
+const ConfigProvider:FC<PropsWithChildren> = (props) => {
+    const { children } = props;
+    const messageRef = useRef<MessageRef>(null)
+  return (
+    <MessageConfigContext.Provider  value={{messageRef}}>
+        <MessageProvider ref={messageRef}></MessageProvider>
+        {children}
+    </MessageConfigContext.Provider>
+  )
+}
+
+export default ConfigProvider
