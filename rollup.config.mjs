@@ -22,7 +22,7 @@ export default [
 	{
 		treeshake: {
 			// 打包时将没有用到的代码移除
-			moduleSideEffects: false,
+			moduleSideEffects: true,
 		},
 		input: './src/components/index.ts',
 		external: ['react', 'react-dom'],

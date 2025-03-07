@@ -80,5 +80,3 @@ const MessageProviderInner = (_props: unknown,ref: any) => {
     return createPortal(messageWrapper, el) as any
 }
 export const MessageProvider = forwardRef<MessageRef>(MessageProviderInner);
-export {default as ConfigProvider} from './ConfigProvider';
-export {default as useMessage} from './hooks/useMessage';
